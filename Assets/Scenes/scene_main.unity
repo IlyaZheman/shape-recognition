@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 88133569}
   - component: {fileID: 88133568}
   - component: {fileID: 88133567}
+  - component: {fileID: 88133570}
   m_Layer: 5
   m_Name: image
   m_TagString: Untagged
@@ -174,7 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 88133568}
   rectTransform: {fileID: 88133566}
-  textureSize: 128
+  digit: {fileID: 88133570}
+  textureSize: 28
   color: {r: 0, g: 0, b: 0, a: 0.5019608}
   brushSize: 8
   texture: {fileID: 0}
@@ -216,6 +218,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88133565}
   m_CullTransparentMesh: 1
+--- !u!114 &88133570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88133565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b048329c6934854b797e6c723d1a99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modelAsset: {fileID: 5022602860645237092, guid: 5f89b3d64c99a14418c09cce63d14dc1, type: 3}
+  results: []
 --- !u!1 &166888753
 GameObject:
   m_ObjectHideFlags: 0

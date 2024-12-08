@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Extensions;
+using Test;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -8,9 +10,9 @@ namespace DrawModule
     {
         [SerializeField] private Image image;
         [SerializeField] private RectTransform rectTransform;
+        [SerializeField] private ClassifyHandwrittenDigit digit;
 
-        [Range(2, 512)]
-        [SerializeField] private int textureSize = 128;
+        [Range(2, 512)] [SerializeField] private int textureSize = 128;
         [SerializeField] private Color color;
         [SerializeField] private int brushSize = 8;
 
@@ -48,6 +50,9 @@ namespace DrawModule
 
             texture.wrapMode = TextureWrapMode.Repeat;
             texture.filterMode = FilterMode.Point;
+
+            texture.Fill(Color.black);
+
             image.material.mainTexture = texture;
             texture.Apply();
         }
@@ -59,6 +64,7 @@ namespace DrawModule
 
             DrawCircle((int)textureCoord.x, (int)textureCoord.y);
             texture.Apply();
+            digit.UpdateResults(texture);
 
             _previousDragPosition = textureCoord;
         }
@@ -78,6 +84,7 @@ namespace DrawModule
             }
 
             texture.Apply();
+            digit.UpdateResults(texture);
 
             _previousDragPosition = textureCoord;
         }
